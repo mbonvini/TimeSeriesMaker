@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <style>
+    #rect {
+      border-style: solid;
+      border-width: 1px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .drawLine {
+      
+    }
+
+    .x.axis {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .page-header {
+      padding-top:40px;
+    }
+
+    .axis path {
+      display: none;
+    }
+
+    .axis line {
+      shape-rendering: crispEdges;
+      stroke: #000;
+    }
+
+    .axis .minor line {
+       stroke: #777;
+       stroke-dasharray: 2,2;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+	<a class="navbar-brand" href="#">Time Series Maker</a>
+      </div>      
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	<ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-github"></i> Github</a></li>
+	</ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="page-header">
+
+      <div class="row">
+	<div class="col-md-10 col-md-offset-1">
+	  <p>
+	    Do you have an idea of how your data should look like but don't know how to generate
+	    it? Is the time series you are thinking about in your mind and you just need to get it
+	    in electronic format so that you can start using it in your application or algorithms?
+	  <p>
+	    The <a href="#">Time Series Maker</a> allows you to draw a time series and download 
+	    the result as a CSV or JSON file, pretty neat right? 
+	  </p>
+	</div>
+      </div>
+      
+      <!-- CANVAS -->
+      <div class="row">
+	<div class = "col-md-5 col-md-offset-1">
+	  <div class="btn-group btn-group-justified">
+	    <a href="#" class="btn btn-sm btn-primary">1 min</a>
+	    <a href="#" class="btn btn-sm btn-primary">5 min</a>
+	    <a href="#" class="btn btn-sm btn-primary">15 min</a>
+	    <a href="#" class="btn btn-sm btn-primary">1 hour</a>
+	    <a href="#" class="btn btn-sm btn-primary">1 day</a>
+	  </div>
+	</div>
+	<div class = "col-md-10 col-md-offset-1" id="canvas">
+	</div>
+      </div>
+
+    </div>
+  </div>
+  <script src="js/tsmk.js"></script>
+</body>
+
+</html>
