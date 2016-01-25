@@ -9,15 +9,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <style>
-    #rect {
-      border-style: solid;
-      border-width: 1px;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .drawLine {
-      
+    .currentPath {
+      stroke-width: 2px;
     }
 
     .x.axis {
@@ -29,19 +22,18 @@
       padding-top:40px;
     }
 
-    .axis path {
-      display: none;
-    }
-
+    .axis path,
     .axis line {
+      fill: none;
+      stroke: grey;
+      stroke-width: 1;
       shape-rendering: crispEdges;
-      stroke: #000;
     }
 
-    .axis .minor line {
-       stroke: #777;
-       stroke-dasharray: 2,2;
+    #canvas { 
+       font: 12px Arial;
     }
+
   </style>
 </head>
 
@@ -53,7 +45,7 @@
       </div>      
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	<ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><i class="fa fa-github"></i> Github</a></li>
+          <li><a href="https://github.com/mbonvini/TimeSeriesMaker"><i class="fa fa-github"></i> Github</a></li>
 	</ul>
       </div>
     </div>
@@ -76,16 +68,46 @@
       
       <!-- CANVAS -->
       <div class="row">
-	<div class = "col-md-5 col-md-offset-1">
-	  <div class="btn-group btn-group-justified">
-	    <a href="#" class="btn btn-sm btn-primary">1 min</a>
-	    <a href="#" class="btn btn-sm btn-primary">5 min</a>
-	    <a href="#" class="btn btn-sm btn-primary">15 min</a>
-	    <a href="#" class="btn btn-sm btn-primary">1 hour</a>
-	    <a href="#" class="btn btn-sm btn-primary">1 day</a>
-	  </div>
-	</div>
 	<div class = "col-md-10 col-md-offset-1" id="canvas">
+	</div>
+      </div>
+
+      <div class="row">
+	<div class = "col-md-4 col-md-offset-1">
+	  <a class="btn btn-info disabled" href="#" role="button" id="exportCsv">
+	    <i class="fa fa-file-o"></i> Export CSV
+	  </a>
+	  <a class="btn btn-info disabled" href="#" role="button" id="exportJSON">
+	    <i class="fa fa-file-o"></i> Export JSON
+	  </a>
+	</div>	
+      </div>
+
+      <div class="row">
+	<div class = "col-md-5 col-md-offset-1"> 
+	  <h3>JSON format</h3>
+	  <p>
+	    The format of the data when exported in JSON format is the following
+	  </p>
+	  <pre>
+{
+ 'times': [0.0, 0.1, ...],
+ 'values': [12.5, 13.4, ...]
+}
+	  </pre>
+	</div>
+	<div class = "col-md-5"> 
+	  <h3>CSV format</h3>
+	  <p>
+	    The format of the data when exported in CSV format is the following
+	  </p>
+	  <pre>
+time,value
+0.0,12.5
+0.1,13.4
+...
+	  </pre>
+
 	</div>
       </div>
 
