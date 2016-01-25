@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <style>
+    .currentPath {
+      stroke-width: 2px;
+    }
+
+    .x.axis {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .page-header {
+      padding-top:40px;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: grey;
+      stroke-width: 1;
+      shape-rendering: crispEdges;
+    }
+
+    #canvas { 
+       font: 12px Arial;
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+	<a class="navbar-brand" href="#">Time Series Maker</a>
+      </div>      
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	<ul class="nav navbar-nav navbar-right">
+          <li><a href="https://github.com/mbonvini/TimeSeriesMaker"><i class="fa fa-github"></i> Github</a></li>
+	</ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="page-header">
+
+      <div class="row">
+	<div class="col-md-10 col-md-offset-1">
+	  <p>
+	    Do you have an idea of how your data should look like but don't know how to generate
+	    it? Is the time series you are thinking about in your mind and you just need to get it
+	    in electronic format so that you can start using it in your application or algorithms?
+	  <p>
+	    The <a href="#">Time Series Maker</a> allows you to draw a time series and download 
+	    the result as a CSV or JSON file, pretty neat right? 
+	  </p>
+	</div>
+      </div>
+      
+      <!-- CANVAS -->
+      <div class="row">
+	<div class = "col-md-10 col-md-offset-1" id="canvas">
+	</div>
+      </div>
+
+      <div class="row">
+	<div class = "col-md-4 col-md-offset-1">
+	  <a class="btn btn-info disabled" href="#" role="button" id="exportCsv">
+	    <i class="fa fa-file-o"></i> Export CSV
+	  </a>
+	  <a class="btn btn-info disabled" href="#" role="button" id="exportJSON">
+	    <i class="fa fa-file-o"></i> Export JSON
+	  </a>
+	</div>	
+      </div>
+
+      <div class="row">
+	<div class = "col-md-5 col-md-offset-1"> 
+	  <h3>JSON format</h3>
+	  <p>
+	    The format of the data when exported in JSON format is the following
+	  </p>
+	  <pre>
+{
+ 'times': [0.0, 0.1, ...],
+ 'values': [12.5, 13.4, ...]
+}
+	  </pre>
+	</div>
+	<div class = "col-md-5"> 
+	  <h3>CSV format</h3>
+	  <p>
+	    The format of the data when exported in CSV format is the following
+	  </p>
+	  <pre>
+time,value
+0.0,12.5
+0.1,13.4
+...
+	  </pre>
+
+	</div>
+      </div>
+
+    </div>
+  </div>
+  <script src="js/tsmk.js"></script>
+</body>
+
+</html>
