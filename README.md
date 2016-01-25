@@ -1,8 +1,7 @@
 # Time Series Maker
 
-Simple app to generate hand-drawn time series
-
-To test it look [here]()
+Simple app to generate hand-drawn time series.
+To test it look [here](http://mbonvini.github.io/TimeSeriesMaker).
 
 ### Author
 
