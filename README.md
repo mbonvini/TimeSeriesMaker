@@ -3,6 +3,8 @@
 Simple app to generate hand-drawn time series.
 To test it look [here](http://mbonvini.github.io/TimeSeriesMaker).
 
+![TimeSeriesMaker](https://raw.githubusercontent.com/mbonvini/TimeSeriesMaker/master/images/tsmkr.gif)
+
 ### Author
 
 Marco Bonvini
